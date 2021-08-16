@@ -1,0 +1,384 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/Fonts/Orbitron-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/bouchofarrows.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/stmbar.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/healthbar1.png" type="Texture" id=4]
+[ext_resource path="res://godot/src/ui/StatsInterface.gd" type="Script" id=5]
+[ext_resource path="res://assets/ui/lvlbar.png" type="Texture" id=6]
+[ext_resource path="res://assets/Fonts/ARCADECLASSIC.TTF" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/ui/ui_base.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/manabar1.png" type="Texture" id=9]
+[ext_resource path="res://assets/Fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="Animation" id=4]
+length = 0.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Energybar:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "lvl_up_anim"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlayerLevel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.5, 0.7, 0.9, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="StatsInterface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HealthbarUnder" type="TextureProgress" parent="."]
+anchor_left = 0.336
+anchor_top = 0.117
+anchor_right = 0.336
+anchor_bottom = 0.117
+margin_left = -85.1502
+margin_top = -25.6585
+margin_right = -21.1502
+margin_bottom = 6.3415
+rect_scale = Vector2( 1.5, 1.5 )
+value = 50.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
+tint_under = Color( 0, 0, 0, 0.588235 )
+tint_progress = Color( 1, 0.607843, 0.607843, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Healthbar" type="TextureProgress" parent="."]
+anchor_left = 0.336
+anchor_top = 0.117
+anchor_right = 0.336
+anchor_bottom = 0.117
+margin_left = -85.0178
+margin_top = -25.7909
+margin_right = -21.0178
+margin_bottom = 6.20906
+rect_scale = Vector2( 1.5, 1.5 )
+value = 50.0
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
+tint_under = Color( 0, 0, 0, 0.588235 )
+tint_progress = Color( 1, 0.533333, 0.227451, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HPCounter" type="Label" parent="."]
+margin_left = 45.5592
+margin_top = 5.32449
+margin_right = 105.559
+margin_bottom = 27.3245
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = SubResource( 1 )
+text = "00/00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergybarUnder" type="TextureProgress" parent="."]
+anchor_left = 0.336
+anchor_top = 0.117
+anchor_right = 0.336
+anchor_bottom = 0.117
+margin_left = -85.0862
+margin_top = -25.533
+margin_right = -21.0862
+margin_bottom = 6.46699
+rect_scale = Vector2( 1.5, 1.5 )
+value = 50.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 3 )
+tint_under = Color( 0, 0, 0, 0.588235 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Energybar" type="TextureProgress" parent="."]
+anchor_left = 0.336
+anchor_top = 0.117
+anchor_right = 0.336
+anchor_bottom = 0.117
+margin_left = -84.6999
+margin_top = -25.6734
+margin_right = -20.6999
+margin_bottom = 6.32664
+rect_scale = Vector2( 1.5, 1.5 )
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 3 )
+tint_under = Color( 0, 0, 0, 0.588235 )
+tint_progress = Color( 1, 0.992157, 0.435294, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="STCounter" type="Label" parent="."]
+margin_left = 44.3507
+margin_top = 16.691
+margin_right = 104.351
+margin_bottom = 38.691
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "00/00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ManabarUnder" type="TextureProgress" parent="."]
+anchor_left = 0.336
+anchor_top = 0.117
+anchor_right = 0.336
+anchor_bottom = 0.117
+margin_left = -85.0862
+margin_top = -25.533
+margin_right = -21.0862
+margin_bottom = 6.46699
+rect_scale = Vector2( 1.5, 1.5 )
+value = 50.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 9 )
+tint_under = Color( 0, 0, 0, 0.588235 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Manabar" type="TextureProgress" parent="."]
+anchor_left = 0.187
+anchor_top = 0.16
+anchor_right = 0.187
+anchor_bottom = 0.16
+margin_left = -46.9422
+margin_top = -31.983
+margin_right = 17.0578
+margin_bottom = 0.0169868
+rect_scale = Vector2( 1.5, 1.5 )
+value = 50.0
+texture_under = ExtResource( 9 )
+texture_progress = ExtResource( 9 )
+tint_under = Color( 0, 0, 0, 0.588235 )
+tint_progress = Color( 0.392157, 0.301961, 1, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Base" type="Sprite" parent="."]
+position = Vector2( 0.929783, -7.98301 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 8 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LevelProgressUnder" type="TextureProgress" parent="."]
+anchor_left = 0.5
+anchor_top = 0.975
+anchor_right = 0.5
+anchor_bottom = 0.975
+margin_left = -136.125
+margin_top = -154.125
+margin_right = -72.125
+margin_bottom = -122.125
+rect_scale = Vector2( 1.5, 1.5 )
+value = 50.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 0.588235 )
+tint_progress = Color( 1, 1, 1, 0.588235 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LevelProgress" type="TextureProgress" parent="."]
+anchor_left = 0.5
+anchor_top = 0.975
+anchor_right = 0.5
+anchor_bottom = 0.975
+margin_left = -136.125
+margin_top = -154.125
+margin_right = -72.125
+margin_bottom = -122.125
+rect_scale = Vector2( 1.5, 1.5 )
+value = 50.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 0.588235 )
+tint_progress = Color( 0.501961, 1, 0, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerLevel" type="Label" parent="."]
+anchor_left = 0.064
+anchor_top = 0.106
+anchor_right = 0.064
+anchor_bottom = 0.106
+margin_left = -8.54019
+margin_top = -6.05927
+margin_right = 21.4598
+margin_bottom = 17.9407
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 2 )
+text = "00"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="QuiverIcon" type="TextureRect" parent="."]
+anchor_left = 0.059
+anchor_top = 0.196
+anchor_right = 0.059
+anchor_bottom = 0.196
+margin_left = 13.5464
+margin_top = -4.40541
+margin_right = 27.5464
+margin_bottom = 5.59459
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowsAmount" type="Label" parent="."]
+anchor_left = 0.194
+anchor_top = 0.204
+anchor_right = 0.194
+anchor_bottom = 0.204
+margin_left = -6.7763
+margin_top = -4.20494
+margin_right = 20.2237
+margin_bottom = 12.7951
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "000"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnergyTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="HealthTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/alert = SubResource( 4 )
+anims/lvl_up_anim = SubResource( 6 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="HPLabel" type="Label" parent="."]
+anchor_left = 0.119
+anchor_top = 0.046
+anchor_right = 0.119
+anchor_bottom = 0.046
+margin_left = -2.62623
+margin_top = -2.50587
+margin_right = 15.3738
+margin_bottom = 14.4941
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = SubResource( 5 )
+text = "HP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MPLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.212
+margin_top = -63.1093
+margin_right = -74.2118
+margin_bottom = -46.1093
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 5 )
+text = "MP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="STLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.9421
+margin_top = -57.7216
+margin_right = -72.9421
+margin_bottom = -40.7216
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 5 )
+text = "ST"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="EnergyTimer" to="." method="_on_EnergyTimer_timeout"]
+[connection signal="timeout" from="HealthTimer" to="." method="_on_HealthTimer_timeout"]

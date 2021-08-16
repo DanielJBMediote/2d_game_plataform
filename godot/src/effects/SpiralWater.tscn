@@ -1,0 +1,104 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/animations_effects/spiral_sprite.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 0, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 0, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 190, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 190, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 190, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 380, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 380, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 380, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 570, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 570, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 570, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 760, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 760, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 760, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 950, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 950, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 1 )
+region = Rect2( 800, 950, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 1140, 400, 190 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 1140, 400, 190 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "spiral_looping",
+"speed": 16.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "spiral_start",
+"speed": 5.0
+} ]
+
+[node name="SpiralWater" type="AnimatedSprite"]
+position = Vector2( 1.25992, -33.6091 )
+scale = Vector2( 0.519458, 0.519458 )
+frames = SubResource( 21 )
+animation = "spiral_looping"
+frame = 6
+playing = true

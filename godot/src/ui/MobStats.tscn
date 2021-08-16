@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/ui/bar_template2.png" type="Texture" id=1]
+[ext_resource path="res://godot/src/ui/MobStats.gd" type="Script" id=2]
+[ext_resource path="res://assets/Fonts/Minecraftia-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 2
+outline_color = Color( 0.278431, 0, 0.329412, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "xp_show"
+tracks/0/type = "value"
+tracks/0/path = NodePath("XP:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("XP:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.351925, -2.32062 ), Vector2( -0.351925, -11.3206 ) ]
+}
+
+[node name="MobStats" type="Control"]
+margin_right = 50.0
+margin_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthUnder" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.0
+rect_scale = Vector2( 1.5, 1.5 )
+value = 65.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 1 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.901961, 0.784314, 0.784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="TextureProgress" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1.5, 1.5 )
+value = 50.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 1 )
+tint_under = Color( 0, 0, 0, 0 )
+tint_progress = Color( 0.164706, 1, 0.298039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="XP" type="Label" parent="."]
+anchor_left = 0.468
+anchor_top = 0.032
+anchor_right = 0.468
+anchor_bottom = 0.032
+margin_left = -23.7519
+margin_top = -5.50062
+margin_right = 71.2481
+margin_bottom = 16.4994
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/xp_show = SubResource( 2 )

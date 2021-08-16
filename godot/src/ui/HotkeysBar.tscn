@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="HotkeysBar" type="Control"]
+anchor_top = 0.807
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.0500031
+__meta__ = {
+"_edit_use_anchors_": false
+}

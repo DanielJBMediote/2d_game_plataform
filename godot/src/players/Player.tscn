@@ -1,0 +1,787 @@
+[gd_scene load_steps=224 format=2]
+
+[ext_resource path="res://godot/src/players/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" type="Texture" id=2]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-idle-01.png" type="Texture" id=3]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-idle-2-03.png" type="Texture" id=4]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-idle-2-01.png" type="Texture" id=5]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-idle-2-02.png" type="Texture" id=6]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-idle-2-00.png" type="Texture" id=7]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-die-00.png" type="Texture" id=8]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-die-02.png" type="Texture" id=9]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-idle-03.png" type="Texture" id=10]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-idle-02.png" type="Texture" id=11]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-fall-01.png" type="Texture" id=12]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack3-04.png" type="Texture" id=13]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-cast-03.png" type="Texture" id=14]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-cast-loop-01.png" type="Texture" id=15]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-cast-loop-03.png" type="Texture" id=16]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-crouch-03.png" type="Texture" id=17]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-run-03.png" type="Texture" id=18]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-slide-01.png" type="Texture" id=19]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-hurt-00.png" type="Texture" id=20]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-run-04.png" type="Texture" id=21]
+[ext_resource path="res://assets/entities/Adventurer-1.5/run3/adventurer-run3-sword-Sheet.png" type="Texture" id=22]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-jump-00.png" type="Texture" id=23]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" type="Texture" id=24]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-fall-00.png" type="Texture" id=25]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack3-01.png" type="Texture" id=26]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-cast-loop-00.png" type="Texture" id=27]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-cast-loop-02.png" type="Texture" id=28]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-hurt-01.png" type="Texture" id=29]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-stand-02.png" type="Texture" id=30]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-crnr-jmp-01.png" type="Texture" id=31]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-hurt-02.png" type="Texture" id=32]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-stand-01.png" type="Texture" id=33]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-swrd-drw-00.png" type="Texture" id=34]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-die-04.png" type="Texture" id=35]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-jump-01.png" type="Texture" id=36]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-jump-02.png" type="Texture" id=37]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack3-05.png" type="Texture" id=38]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack1-02.png" type="Texture" id=39]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack2-05.png" type="Texture" id=40]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-run-02.png" type="Texture" id=41]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-crouch-02.png" type="Texture" id=42]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack2-01.png" type="Texture" id=43]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack2-03.png" type="Texture" id=44]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-stand-00.png" type="Texture" id=45]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-smrslt-03.png" type="Texture" id=46]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-run-01.png" type="Texture" id=47]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-crouch-01.png" type="Texture" id=48]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-crnr-jmp-00.png" type="Texture" id=49]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-smrslt-02.png" type="Texture" id=50]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack2-04.png" type="Texture" id=51]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-crouch-00.png" type="Texture" id=52]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-slide-00.png" type="Texture" id=53]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack1-00.png" type="Texture" id=54]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-die-05.png" type="Texture" id=55]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-run-05.png" type="Texture" id=56]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-smrslt-00.png" type="Texture" id=57]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack2-00.png" type="Texture" id=58]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack1-03.png" type="Texture" id=59]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-cast-01.png" type="Texture" id=60]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-die-06.png" type="Texture" id=61]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack3-00.png" type="Texture" id=62]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-die-03.png" type="Texture" id=63]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-run-00.png" type="Texture" id=64]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack1-01.png" type="Texture" id=65]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-smrslt-01.png" type="Texture" id=66]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack1-04.png" type="Texture" id=67]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack2-02.png" type="Texture" id=68]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack3-02.png" type="Texture" id=69]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-attack3-03.png" type="Texture" id=70]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-cast-00.png" type="Texture" id=71]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-cast-02.png" type="Texture" id=72]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-die-01.png" type="Texture" id=73]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-swrd-drw-01.png" type="Texture" id=74]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-items-01.png" type="Texture" id=75]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-swrd-drw-03.png" type="Texture" id=76]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack2-00.png" type="Texture" id=77]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-items-02.png" type="Texture" id=78]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack1-00.png" type="Texture" id=79]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-swrd-shte-02.png" type="Texture" id=80]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-swrd-shte-00.png" type="Texture" id=81]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack3-loop-01.png" type="Texture" id=82]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack-3-end-00.png" type="Texture" id=83]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Adventurer-Bow/adventurer-bow-Sheet.png" type="Texture" id=84]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack1-03.png" type="Texture" id=85]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-swrd-drw-02.png" type="Texture" id=86]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-swrd-shte-03.png" type="Texture" id=87]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-items-00.png" type="Texture" id=88]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack3-rdy-00.png" type="Texture" id=89]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack-3-end-01.png" type="Texture" id=90]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-wall-slide-00.png" type="Texture" id=91]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack-3-end-02.png" type="Texture" id=92]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack1-01.png" type="Texture" id=93]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack3-loop-00.png" type="Texture" id=94]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack1-02.png" type="Texture" id=95]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-wall-slide-01.png" type="Texture" id=96]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack2-02.png" type="Texture" id=97]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-air-attack2-01.png" type="Texture" id=98]
+[ext_resource path="res://assets/entities/Adventurer-1.5/Individual Sprites/adventurer-swrd-shte-01.png" type="Texture" id=99]
+[ext_resource path="res://godot/src/zones/Hurtbox.tscn" type="PackedScene" id=100]
+[ext_resource path="res://godot/src/zones/Hitbox.tscn" type="PackedScene" id=101]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 53 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 19 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 88 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 75 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 78 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 34 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 74 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 86 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 76 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 84 )
+region = Rect2( 0, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 84 )
+region = Rect2( 50, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 84 )
+region = Rect2( 100, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 84 )
+region = Rect2( 150, 74, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 84 )
+region = Rect2( 0, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 84 )
+region = Rect2( 50, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 84 )
+region = Rect2( 100, 111, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 62 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 26 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 69 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 70 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 38 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 94 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 82 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 64 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 47 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 41 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 56 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 23 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 36 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 37 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 84 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 84 )
+region = Rect2( 50, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 84 )
+region = Rect2( 100, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 84 )
+region = Rect2( 150, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 84 )
+region = Rect2( 0, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 84 )
+region = Rect2( 50, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 84 )
+region = Rect2( 100, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 84 )
+region = Rect2( 150, 37, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 79 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 93 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 95 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 85 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 27 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 28 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 16 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 71 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 60 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 72 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 89 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 83 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 90 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 92 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 22 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 22 )
+region = Rect2( 50, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 22 )
+region = Rect2( 100, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 22 )
+region = Rect2( 150, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 22 )
+region = Rect2( 200, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 22 )
+region = Rect2( 250, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 91 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 96 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 77 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 98 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 97 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 25 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 81 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 99 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 80 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 87 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 58 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 43 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 68 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=90]
+atlas = ExtResource( 44 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=91]
+atlas = ExtResource( 51 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=92]
+atlas = ExtResource( 40 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=93]
+atlas = ExtResource( 54 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=94]
+atlas = ExtResource( 65 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=95]
+atlas = ExtResource( 39 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=96]
+atlas = ExtResource( 59 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=97]
+atlas = ExtResource( 67 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=98]
+atlas = ExtResource( 45 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=99]
+atlas = ExtResource( 33 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=100]
+atlas = ExtResource( 30 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=101]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=102]
+atlas = ExtResource( 31 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=103]
+atlas = ExtResource( 52 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=104]
+atlas = ExtResource( 48 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=105]
+atlas = ExtResource( 42 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=106]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 57 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 66 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 50 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 46 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=111]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=112]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=113]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=114]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=115]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=116]
+atlas = ExtResource( 29 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=117]
+atlas = ExtResource( 32 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 73 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 63 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 35 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 55 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 61 )
+region = Rect2( 0, 0, 50, 37 )
+
+[sub_resource type="SpriteFrames" id=118]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "slide",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": false,
+"name": "item",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": false,
+"name": "draw_sword",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "idle_normal",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": false,
+"name": "shot_bow_jump",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
+"loop": false,
+"name": "attack3",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "air_attack_loop_down",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": false,
+"name": "jump",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
+"loop": false,
+"name": "shot_bow",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
+"loop": false,
+"name": "air_attack1",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ) ],
+"loop": true,
+"name": "cast_loop",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ) ],
+"loop": false,
+"name": "cast",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": false,
+"name": "air_attack_end",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ) ],
+"loop": true,
+"name": "run_w_sword",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 76 ), SubResource( 77 ) ],
+"loop": true,
+"name": "wall_slide",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 78 ), SubResource( 79 ), SubResource( 80 ) ],
+"loop": false,
+"name": "air_attack2",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 81 ), SubResource( 82 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ) ],
+"loop": false,
+"name": "wield_sword",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ) ],
+"loop": false,
+"name": "attack2",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ), SubResource( 97 ) ],
+"loop": false,
+"name": "attack1",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 98 ), SubResource( 99 ), SubResource( 100 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 101 ), SubResource( 102 ) ],
+"loop": true,
+"name": "jump_state",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 103 ), SubResource( 104 ), SubResource( 105 ), SubResource( 106 ) ],
+"loop": false,
+"name": "crouch",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 107 ), SubResource( 108 ), SubResource( 109 ), SubResource( 110 ) ],
+"loop": false,
+"name": "roll",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 111 ), SubResource( 112 ), SubResource( 113 ), SubResource( 114 ) ],
+"loop": true,
+"name": "idle_w_sword",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 115 ), SubResource( 116 ), SubResource( 117 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": false,
+"name": "dead",
+"speed": 10.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=119]
+radius = 5.27157
+height = 12.3783
+
+[sub_resource type="Animation" id=120]
+
+[sub_resource type="RectangleShape2D" id=121]
+extents = Vector2( 16.845, 19.1132 )
+
+[sub_resource type="CapsuleShape2D" id=122]
+radius = 8.31446
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 41479
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1, -25 )
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 118 )
+animation = "dead"
+frame = 6
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 1.25 )
+rotation = 1.56538
+shape = SubResource( 119 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -40 )
+current = true
+zoom = Vector2( 2, 2 )
+smoothing_enabled = true
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
+editor_draw_drag_margin = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+anims/zoom_out = SubResource( 120 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ArrowPivot" type="Position2D" parent="."]
+position = Vector2( 16, -20 )
+
+[node name="Playerhitbox" parent="." instance=ExtResource( 101 )]
+collision_layer = 64
+collision_mask = 16
+
+[node name="CollisionShape2D" parent="Playerhitbox" index="0"]
+position = Vector2( -28.7882, -22.653 )
+shape = SubResource( 121 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 100 )]
+collision_layer = 8
+collision_mask = 128
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0, -17 )
+shape = SubResource( 122 )
+
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="Playerhitbox"]
+[editable path="Hurtbox"]
